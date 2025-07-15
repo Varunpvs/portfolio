@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Varun PVS | Personal Portfolio</title>
+    <title>Varun PVS | Interactive Portfolio</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,32 +14,33 @@
 
     <div class="aurora-background"></div>
 
-    <!-- Mobile Navigation -->
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
-        <i class="ri-menu-3-line"></i>
-    </button>
-    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
-        <button class="menu-close" id="menu-close" aria-label="Close navigation menu">
-            <i class="ri-close-line"></i>
+    <!-- Universal Header / Mobile Mini Navbar -->
+    <header class="header" id="header">
+        <div class="logo">VARUN PVS</div>
+        <nav class="desktop-nav">
+            <a href="#home" class="nav-link active-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
+            <i class="ri-menu-line"></i>
         </button>
+    </header>
+
+    <!-- Full-screen Mobile Menu -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+        <button class="menu-close" id="menu-close" aria-label="Close navigation menu"><i class="ri-close-line"></i></button>
         <nav class="mobile-nav">
             <a href="#home">Home</a>
             <a href="#about">About</a>
+            <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </div>
 
-    <!-- Desktop Navigation -->
-    <header class="navbar" id="navbar">
-        <div class="logo">VARUN PVS</div>
-        <nav>
-            <a href="#home" class="nav-link active-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-    </header>
 
     <main class="content-wrapper">
 
@@ -53,38 +54,135 @@
                         <a href="resume.pdf" class="btn secondary" download><i class="ri-download-2-line"></i> Get Resume</a>
                     </div>
                 </div>
-                <!-- IMAGE CONTAINER: Replace the src with your image path -->
-                <div class="hero-image-container glass-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop" alt="Portrait of Varun PVS" />
+                <div class="hero-illustration">
+                    <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <!-- Gradients -->
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgb(106, 17, 203)" />
+            <stop offset="100%" stop-color="rgb(37, 117, 252)" />
+        </linearGradient>
+        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(52, 232, 158, 0.8)" />
+            <stop offset="100%" stop-color="rgba(37, 117, 252, 0.5)" />
+        </linearGradient>
+
+        <!-- Glow effect -->
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <g transform="translate(200 150)" opacity="0.9">
+        <!-- Central orb -->
+        <circle cx="0" cy="0" r="40" fill="url(#grad1)" filter="url(#glow)">
+            <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="4s" repeatCount="indefinite" />
+        </circle>
+
+        <!-- Orbit 1 -->
+        <g>
+            <circle cx="0" cy="0" r="100" fill="none" stroke="url(#grad2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5" opacity="0.3" />
+            <g>
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite" />
+                <circle cx="100" cy="0" r="5" fill="#34e89e" />
+            </g>
+        </g>
+
+        <!-- Orbit 2 -->
+        <g>
+            <circle cx="0" cy="0" r="140" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 4" />
+            <g>
+                <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="20s" repeatCount="indefinite" />
+                <circle cx="140" cy="0" r="4" fill="rgba(255,255,255,0.5)" />
+            </g>
+        </g>
+
+        <!-- Floating code-like symbols with animation -->
+        <g>
+            <!-- Symbol 1 -->
+            <g>
+                <text x="-60" y="60" font-family="Courier New, monospace" font-size="16" fill="#a1a1a6" opacity="0.7">{...}</text>
+                <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="6s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.5;0.8;0.5" dur="6s" repeatCount="indefinite" />
+            </g>
+
+            <!-- Symbol 2 -->
+            <g>
+                <text x="50" y="-50" font-family="Courier New, monospace" font-size="16" fill="#a1a1a6" opacity="0.7">/&gt;</text>
+                <animateTransform attributeName="transform" type="translate" values="0,0; 0,4; 0,0" dur="8s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
+            </g>
+
+            <!-- Symbol 3 -->
+            <g>
+                <text x="-20" y="-80" font-family="Courier New, monospace" font-size="14" fill="#a1a1a6" opacity="0.5">&lt;div&gt;</text>
+                <animateTransform attributeName="transform" type="translate" values="0,0; 0,6; 0,0" dur="10s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="10s" repeatCount="indefinite" />
+            </g>
+
+            <!-- Symbol 4 -->
+            <g>
+                <text x="30" y="90" font-family="Courier New, monospace" font-size="14" fill="#a1a1a6" opacity="0.5">&lt;/code&gt;</text>
+                <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="7s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="7s" repeatCount="indefinite" />
+            </g>
+        </g>
+    </g>
+</svg>
+
                 </div>
             </div>
         </section>
 
+        <!-- The rest of your sections (About, Experience, etc.) remain unchanged -->
+
         <section id="about" class="glass-card animate-scroll">
             <h2 class="section-title">A Fusion of Logic and Creativity</h2>
             <div class="about-content">
-                <p>From my base in Uruguay, I engineer solutions that blend creative development with operational excellence. At TCS, I focus on automation using Django, Flask, and DevOps, but my true passion is building seamless user experiences—from complex cloud APIs to intuitive desktop applications with CustomTkinter.</p>
+                <p>From my base in Uruguay, I engineer solutions that blend creative development with operational excellence. My passion is building seamless user experiences—from complex cloud APIs to intuitive desktop applications.</p>
+            </div>
+        </section>
+
+        <section id="experience" class="glass-card animate-scroll">
+            <h2 class="section-title">Professional Journey</h2>
+            <div class="timeline">
+                 <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <img src="assets/img/company-logo-1.png" alt="TCS Logo" class="company-logo">
+                        <h3 class="timeline-title">Automation Engineer <span class="company">@ TCS (Humana)</span></h3>
+                        <span class="timeline-date">Jul 2024 – Present</span>
+                        <p>Architecting and managing cloud-native solutions, focusing on API development with Flask, Docker orchestration, and implementing robust logging and monitoring systems for high availability.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                       <img src="assets/img/company-logo-2.png" alt="Project Logo" class="company-logo">
+                       <h3 class="timeline-title">Lead Developer <span class="company">@ EDIP-GUI Project</span></h3>
+                       <span class="timeline-date">Jun 2023 – Jul 2024</span>
+                       <p>Led the development of an enterprise-grade GUI to streamline complex workflows, enabling parallel execution of long-running scripts with real-time progress updates and a highly intuitive user interface.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="projects" class="animate-scroll">
             <h2 class="section-title standalone">Featured Projects</h2>
             <div class="project-gallery">
-                <div class="project-card glass-card">
-                     <div class="card-glint"></div>
-                    <div class="card-content">
-                        <h3>DesignMate API</h3>
-                        <p>A high-performance RESTful API using Django Rest Framework for serving design assets with scalability in mind.</p>
-                        <a href="#" class="project-link">View Project <i class="ri-arrow-right-up-line"></i></a>
-                    </div>
+                 <div class="project-card glass-card">
+                    <h3>DesignMate API</h3>
+                    <p>A high-performance RESTful API using Django Rest Framework for serving design assets with scalability in mind.</p>
+                    <a href="#" class="project-link">View Project <i class="ri-arrow-right-up-line"></i></a>
                 </div>
                 <div class="project-card glass-card">
-                     <div class="card-glint"></div>
-                     <div class="card-content">
-                        <h3>EDIP-GUI</h3>
-                        <p>An enterprise desktop application built with CustomTkinter to manage and parallelize complex automation scripts.</p>
-                        <a href="#" class="project-link">View Project <i class="ri-arrow-right-up-line"></i></a>
-                    </div>
+                    <h3>EDIP-GUI</h3>
+                    <p>An enterprise desktop application built with CustomTkinter to manage and parallelize complex automation scripts.</p>
+                    <a href="#" class="project-link">View Project <i class="ri-arrow-right-up-line"></i></a>
                 </div>
             </div>
         </section>
@@ -97,7 +195,7 @@
                     <input type="text" name="name" placeholder="Name" required />
                     <input type="email" name="email" placeholder="Email" required />
                 </div>
-                <textarea name="message" rows="6" placeholder="Message" required></textarea>
+                <textarea name="message" rows="6" placeholder="Your Message Here..." required></textarea>
                 <button type="submit" class="btn primary"><i class="ri-send-plane-fill"></i> Send Message</button>
             </form>
             <p class="contact-email">
