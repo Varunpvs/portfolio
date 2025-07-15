@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Varun PVS | Personal Portfolio</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="aurora-background"></div>
+
+    <!-- Mobile Navigation -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
+        <i class="ri-menu-3-line"></i>
+    </button>
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+        <button class="menu-close" id="menu-close" aria-label="Close navigation menu">
+            <i class="ri-close-line"></i>
+        </button>
+        <nav class="mobile-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="logo">VARUN PVS</div>
+        <nav>
+            <a href="#home" class="nav-link active-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="animate-on-load">Designing Digital Realities</h1>
+                    <p class="animate-on-load">I'm Varun, an Automation Engineer & Full-Stack Developer creating fluid, intelligent, and beautiful applications for the modern web.</p>
+                    <div class="hero-buttons animate-on-load">
+                        <a href="#projects" class="btn primary"><i class="ri-rocket-line"></i> Explore My Work</a>
+                        <a href="resume.pdf" class="btn secondary" download><i class="ri-download-2-line"></i> Get Resume</a>
+                    </div>
+                </div>
+                <!-- IMAGE CONTAINER: Replace the src with your image path -->
+                <div class="hero-image-container glass-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop" alt="Portrait of Varun PVS" />
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="glass-card animate-scroll">
+            <h2 class="section-title">A Fusion of Logic and Creativity</h2>
+            <div class="about-content">
+                <p>From my base in Uruguay, I engineer solutions that blend creative development with operational excellence. At TCS, I focus on automation using Django, Flask, and DevOps, but my true passion is building seamless user experiences—from complex cloud APIs to intuitive desktop applications with CustomTkinter.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="animate-scroll">
+            <h2 class="section-title standalone">Featured Projects</h2>
+            <div class="project-gallery">
+                <div class="project-card glass-card">
+                     <div class="card-glint"></div>
+                    <div class="card-content">
+                        <h3>DesignMate API</h3>
+                        <p>A high-performance RESTful API using Django Rest Framework for serving design assets with scalability in mind.</p>
+                        <a href="#" class="project-link">View Project <i class="ri-arrow-right-up-line"></i></a>
+                    </div>
+                </div>
+                <div class="project-card glass-card">
+                     <div class="card-glint"></div>
+                     <div class="card-content">
+                        <h3>EDIP-GUI</h3>
+                        <p>An enterprise desktop application built with CustomTkinter to manage and parallelize complex automation scripts.</p>
+                        <a href="#" class="project-link">View Project <i class="ri-arrow-right-up-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="glass-card animate-scroll">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-intro">Have a project idea or a question? I am always open to discussing new opportunities and creative collaborations.</p>
+            <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Name" required />
+                    <input type="email" name="email" placeholder="Email" required />
+                </div>
+                <textarea name="message" rows="6" placeholder="Message" required></textarea>
+                <button type="submit" class="btn primary"><i class="ri-send-plane-fill"></i> Send Message</button>
+            </form>
+            <p class="contact-email">
+                Or email me directly at
+                <a href="mailto:varun@varunweb.dev"><i class="ri-mail-send-line"></i> varun@varunweb.dev</a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Varun PVS. Crafted with code and creativity.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
