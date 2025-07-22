@@ -1,8 +1,11 @@
 /* CSS Variables */
 :root {
   --primary-color: #6a11cb; --secondary-color: #2575fc; --accent-color: #34e89e;
-  --glass-bg: rgba(10, 5, 40, 0.4); --glass-border: rgba(255, 255, 255, 0.15);
-  --glass-shadow: rgba(0, 0, 0, 0.3); --glass-highlight: rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(10, 5, 40, 0.4); /* General background for glass cards */
+  --glass-bg-lighter: rgba(10, 5, 40, 0.6); /* Slightly more opaque for elements like skill tags */
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+  --glass-highlight: rgba(255, 255, 255, 0.05);
   --text-primary: #f5f5f7; --text-secondary: #a1a1a6; --font-family: 'Poppins', sans-serif;
   --header-height: 70px;
   --x: 50%; --y: 50%;
@@ -50,9 +53,9 @@ body.no-scroll { overflow: hidden; }
     transition: all 0.3s ease;
 }
 .header .logo { font-size: 1.4rem; font-weight: 600; }
-.desktop-nav { display: none; }
+.desktop-nav { display: none; /* Hidden by default for mobile-first approach */ }
 .desktop-nav a {
-  margin-left: 2.5rem; font-weight: 500; text-decoration: none; color: var(--text-secondary);
+  font-weight: 500; text-decoration: none; color: var(--text-secondary);
   transition: color 0.3s ease; position: relative; padding-bottom: 5px;
 }
 .desktop-nav a:hover { color: var(--text-primary); }
@@ -71,15 +74,18 @@ body.no-scroll { overflow: hidden; }
 .menu-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text-primary); font-size: 2.5rem; cursor: pointer; }
 .mobile-nav { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 .mobile-nav a { color: var(--text-primary); text-decoration: none; font-size: 2rem; font-weight: 600; opacity: 0; transform: translateY(20px); transition: opacity 0.3s, transform 0.3s; }
+/* Transition delays for mobile nav links - updated for fewer links */
 .mobile-nav-overlay.active .mobile-nav a { opacity: 1; transform: translateY(0); }
 .mobile-nav-overlay.active .mobile-nav a:nth-child(1) { transition-delay: 0.2s; }
 .mobile-nav-overlay.active .mobile-nav a:nth-child(2) { transition-delay: 0.3s; }
 .mobile-nav-overlay.active .mobile-nav a:nth-child(3) { transition-delay: 0.4s; }
 .mobile-nav-overlay.active .mobile-nav a:nth-child(4) { transition-delay: 0.5s; }
 .mobile-nav-overlay.active .mobile-nav a:nth-child(5) { transition-delay: 0.6s; }
+.mobile-nav-overlay.active .mobile-nav a:nth-child(6) { transition-delay: 0.7s; }
+
 
 /* Hero Section */
-.hero { margin-top: 0; } /* Removed margin as content-wrapper padding handles spacing */
+.hero { margin-top: 0; }
 .hero-content { display: flex; align-items: center; gap: 2rem; }
 .hero-text { flex: 1; }
 .hero-text h1 { font-size: 2.8rem; font-weight: 600; margin-bottom: 1rem; line-height: 1.3; }
@@ -104,7 +110,58 @@ section { margin-top: 5rem; }
 .glass-card:hover::before { opacity: 1; }
 .section-title { text-align: center; font-size: 2rem; font-weight: 600; margin-bottom: 3rem; position: relative; z-index: 2; }
 .section-title.standalone { margin-bottom: 2rem; }
-.about-content { text-align: center; max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: var(--text-secondary); }
+
+/* Summary Section */
+.summary-content { text-align: center; max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: var(--text-secondary); }
+.summary-content p strong { color: var(--accent-color); } /* Style for strong tags in summary */
+
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.skill-category {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.skill-category h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed var(--glass-border);
+    padding-bottom: 0.5rem;
+}
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.skill-tag {
+    /* Updated for glass effect */
+    background-color: var(--glass-bg-lighter); /* Slightly more opaque for better contrast */
+    backdrop-filter: blur(10px); /* Apply blur to what's behind it */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    cursor: default;
+    box-shadow: 0 4px 8px var(--glass-shadow);
+}
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px var(--glass-shadow);
+    background-color: rgba(10, 5, 40, 0.8); /* Slightly more opaque on hover */
+}
 
 /* Experience Timeline */
 .timeline { position: relative; display: flex; flex-direction: column; gap: 3rem; }
@@ -114,22 +171,140 @@ section { margin-top: 5rem; }
     transform: scaleY(0); transform-origin: top;
     transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
+/* This targets the timeline itself */
 .timeline.visible::before { transform: scaleY(1); }
-.timeline-item { display: flex; gap: 1.5rem; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.timeline.visible .timeline-item { opacity: 1; transform: translateY(0); }
+
+.timeline-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform; /* Optimize for animation */
+    display: flex; gap: 1.5rem;
+}
+/* This targets the individual timeline items when their parent timeline is visible */
+.timeline.visible .timeline-item {
+    opacity: 1;
+    transform: translateY(0);
+}
 .timeline.visible .timeline-item:nth-child(1) { transition-delay: 0.3s; }
 .timeline.visible .timeline-item:nth-child(2) { transition-delay: 0.6s; }
+/* Add more nth-child rules if you add more timeline items */
+
+
 .timeline-marker { flex-shrink: 0; width: 12px; height: 12px; background-color: var(--accent-color); border-radius: 50%; margin-top: 10px; margin-left: 15px; box-shadow: 0 0 15px var(--accent-color); }
 .company-logo { width: 40px; height: 40px; object-fit: contain; background: rgba(255,255,255,0.1); border-radius: 8px; padding: 5px; margin-bottom: 1rem; }
 .timeline-title { font-size: 1.2rem; font-weight: 600; }
 .timeline-title .company { color: var(--text-secondary); font-weight: 400; }
-.timeline-date { color: var(--accent-color); font-size: 0.9rem; margin: 0.2rem 0 0.5rem; }
-.timeline-content p { color: var(--text-secondary); }
+.timeline-date { color: var(--accent-color); font-size: 0.9rem; margin: 0.2rem 0 0.5rem; display: block; }
+
+/* Common list styling for experience */
+.timeline-content ul {
+    list-style: none; /* Remove default bullet */
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.timeline-content li {
+    position: relative;
+    padding-left: 1.5rem; /* Space for custom bullet */
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+}
+.timeline-content li::before {
+    content: "\2022"; /* Unicode for a solid bullet */
+    color: var(--accent-color); /* Bullet color */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
 /* Projects */
 .project-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .project-card h3 { font-size: 1.4rem; }
+.project-card p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
 .project-link { color: var(--accent-color); text-decoration: none; font-weight: 600; }
+
+/* Profiles and Languages/Interests (New Location - within projects section) */
+.profiles-content {
+    text-align: center;
+    margin-top: 3rem; /* Reduced space after project gallery */
+}
+.profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem; /* Space before language/interests */
+}
+.profile-links .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+    margin-top: 2rem; /* Adjusted for new placement */
+}
+.language-content,
+.interests-content {
+    flex: 1;
+    min-width: 280px;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.language-content h3,
+.interests-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed var(--glass-border);
+    padding-bottom: 0.5rem;
+}
+.language-content ul,
+.interests-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+.language-content li,
+.interests-content li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+}
+.language-content li::before,
+.interests-content li::before {
+    content: "\2022";
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 
 /* Contact Form */
 .contact-intro { text-align: center; max-width: 600px; margin: 0 auto 2rem auto; }
@@ -156,7 +331,10 @@ section { margin-top: 5rem; }
 
 /* --- Responsive Design --- */
 @media (min-width: 900px) {
-    .desktop-nav { display: flex; }
+    .desktop-nav {
+        display: flex;
+        gap: 2rem;
+    }
     .menu-toggle { display: none; }
 }
 
@@ -170,6 +348,27 @@ section { margin-top: 5rem; }
     .hero-illustration { order: -1; width: 60%; max-width: 300px; margin-bottom: 2rem; }
     .hero-text h1 { font-size: 2.5rem; }
     .project-gallery { grid-template-columns: 1fr; }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .language-content,
+    .interests-content {
+        width: 100%;
+        max-width: 450px; /* Constrain width for better readability on single column */
+    }
+    .profile-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-links .btn {
+        width: 80%; /* Make buttons wider on small screens */
+        max-width: 300px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -183,4 +382,28 @@ section { margin-top: 5rem; }
     .hero-text h1 { font-size: 2.2rem; }
     .hero-buttons { flex-direction: column; }
     .btn { width: 100%; justify-content: center; }
+
+    .glass-card {
+        padding: 1.5rem; /* Reduce padding on smallest screens */
+    }
+    .skill-category {
+        padding: 1rem;
+    }
+    .language-content,
+    .interests-content {
+        padding: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .timeline-content li {
+        font-size: 0.95rem;
+    }
 }

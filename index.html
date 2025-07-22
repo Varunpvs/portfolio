@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Varun PVS | Interactive Portfolio</title>
+    <title>Varun PVS | Cloud Automation Engineer & Python Developer</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,8 @@
         <div class="logo">VARUN PVS</div>
         <nav class="desktop-nav">
             <a href="#home" class="nav-link active-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
+            <a href="#summary" class="nav-link">Summary</a>
+            <a href="#skills" class="nav-link">Skills</a>
             <a href="#experience" class="nav-link">Experience</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#contact" class="nav-link">Contact</a>
@@ -34,7 +35,8 @@
         <button class="menu-close" id="menu-close" aria-label="Close navigation menu"><i class="ri-close-line"></i></button>
         <nav class="mobile-nav">
             <a href="#home">Home</a>
-            <a href="#about">About</a>
+            <a href="#summary">Summary</a>
+            <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
@@ -47,137 +49,253 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="animate-on-load">Designing Digital Solutions</h1>
-                    <p class="animate-on-load">I'm Varun, an Automation Engineer & Full-Stack Developer creating fluid, intelligent, and beautiful applications for the modern web.</p>
+                    <h1 class="animate-on-load">Crafting Scalable Digital Solutions</h1>
+                    <p class="animate-on-load">I'm Varun, a Python Developer & Automation Engineer with 3+ years of experience in building scalable backend systems, automation workflows, and managing cloud-native solutions. I focus on performance, reliability, and automation using Django, Flask, APIs, GCP, and Azure.</p>
                     <div class="hero-buttons animate-on-load">
                         <a href="#projects" class="btn primary"><i class="ri-rocket-line"></i> Explore My Work</a>
-                        <a href="resume.pdf" class="btn secondary" download><i class="ri-download-2-line"></i> Get Resume</a>
+                        <a href="https://drive.google.com/file/d/13AaGSSO-_DAJoWiGXWqo7H6JtDTTZlyj/view?usp=sharing" target="_blank" class="btn secondary"><i class="ri-download-2-line"></i> Get Resume</a>
                     </div>
                 </div>
                 <div class="hero-illustration">
                     <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-        <!-- Gradients -->
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgb(106, 17, 203)" />
-            <stop offset="100%" stop-color="rgb(37, 117, 252)" />
-        </linearGradient>
-        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgba(52, 232, 158, 0.8)" />
-            <stop offset="100%" stop-color="rgba(37, 117, 252, 0.5)" />
-        </linearGradient>
+                        <defs>
+                            <!-- Gradients -->
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="rgb(106, 17, 203)" />
+                                <stop offset="100%" stop-color="rgb(37, 117, 252)" />
+                            </linearGradient>
+                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="rgba(52, 232, 158, 0.8)" />
+                                <stop offset="100%" stop-color="rgba(37, 117, 252, 0.5)" />
+                            </linearGradient>
 
-        <!-- Glow effect -->
-        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
-            <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
-    </defs>
+                            <!-- Glow effect -->
+                            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
 
-    <g transform="translate(200 150)" opacity="0.9">
-        <!-- Central orb -->
-        <circle cx="0" cy="0" r="40" fill="url(#grad1)" filter="url(#glow)">
-            <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="4s" repeatCount="indefinite" />
-        </circle>
+                        <g transform="translate(200 150)" opacity="0.9">
+                            <!-- Central orb -->
+                            <circle cx="0" cy="0" r="40" fill="url(#grad1)" filter="url(#glow)">
+                                <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="4s" repeatCount="indefinite" />
+                            </circle>
 
-        <!-- Orbit 1 -->
-        <g>
-            <circle cx="0" cy="0" r="100" fill="none" stroke="url(#grad2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5" opacity="0.3" />
-            <g>
-                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite" />
-                <circle cx="100" cy="0" r="5" fill="#34e89e" />
-            </g>
-        </g>
+                            <!-- Orbit 1 -->
+                            <g>
+                                <circle cx="0" cy="0" r="100" fill="none" stroke="url(#grad2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5" opacity="0.3" />
+                                <g>
+                                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite" />
+                                    <circle cx="100" cy="0" r="5" fill="#34e89e" />
+                                </g>
+                            </g>
 
-        <!-- Orbit 2 -->
-        <g>
-            <circle cx="0" cy="0" r="140" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 4" />
-            <g>
-                <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="20s" repeatCount="indefinite" />
-                <circle cx="140" cy="0" r="4" fill="rgba(255,255,255,0.5)" />
-            </g>
-        </g>
+                            <!-- Orbit 2 -->
+                            <g>
+                                <circle cx="0" cy="0" r="140" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 4" />
+                                <g>
+                                    <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="20s" repeatCount="indefinite" />
+                                    <circle cx="140" cy="0" r="4" fill="rgba(255,255,255,0.5)" />
+                                </g>
+                            </g>
 
-        <!-- Floating code-like symbols with animation -->
-        <g>
-            <!-- Symbol 1 -->
-            <g>
-                <text x="-60" y="60" font-family="Courier New, monospace" font-size="16" fill="#a1a1a6" opacity="0.7">{...}</text>
-                <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="6s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.5;0.8;0.5" dur="6s" repeatCount="indefinite" />
-            </g>
+                            <!-- Floating code-like symbols with animation -->
+                            <g>
+                                <!-- Symbol 1 -->
+                                <g>
+                                    <text x="-60" y="60" font-family="Courier New, monospace" font-size="16" fill="#a1a1a6" opacity="0.7">{...}</text>
+                                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="6s" repeatCount="indefinite" />
+                                    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="6s" repeatCount="indefinite" />
+                                </g>
 
-            <!-- Symbol 2 -->
-            <g>
-                <text x="50" y="-50" font-family="Courier New, monospace" font-size="16" fill="#a1a1a6" opacity="0.7">/&gt;</text>
-                <animateTransform attributeName="transform" type="translate" values="0,0; 0,4; 0,0" dur="8s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
-            </g>
+                                <!-- Symbol 2 -->
+                                <g>
+                                    <text x="50" y="-50" font-family="Courier New, monospace" font-size="16" fill="#a1a1a6" opacity="0.7">/></text>
+                                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,4; 0,0" dur="8s" repeatCount="indefinite" />
+                                    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
+                                </g>
 
-            <!-- Symbol 3 -->
-            <g>
-                <text x="-20" y="-80" font-family="Courier New, monospace" font-size="14" fill="#a1a1a6" opacity="0.5">&lt;div&gt;</text>
-                <animateTransform attributeName="transform" type="translate" values="0,0; 0,6; 0,0" dur="10s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="10s" repeatCount="indefinite" />
-            </g>
+                                <!-- Symbol 3 -->
+                                <g>
+                                    <text x="-20" y="-80" font-family="Courier New, monospace" font-size="14" fill="#a1a1a6" opacity="0.5"><div></text>
+                                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,6; 0,0" dur="10s" repeatCount="indefinite" />
+                                    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="10s" repeatCount="indefinite" />
+                                </g>
 
-            <!-- Symbol 4 -->
-            <g>
-                <text x="30" y="90" font-family="Courier New, monospace" font-size="14" fill="#a1a1a6" opacity="0.5">&lt;/code&gt;</text>
-                <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="7s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="7s" repeatCount="indefinite" />
-            </g>
-        </g>
-    </g>
-</svg>
-
+                                <!-- Symbol 4 -->
+                                <g>
+                                    <text x="30" y="90" font-family="Courier New, monospace" font-size="14" fill="#a1a1a6" opacity="0.5"></code></text>
+                                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="7s" repeatCount="indefinite" />
+                                    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="7s" repeatCount="indefinite" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </section>
 
-        <!-- The rest of your sections (About, Experience, etc.) remain unchanged -->
-
-        <section id="about" class="glass-card animate-scroll">
-            <h2 class="section-title">A Fusion of Logic and Creativity</h2>
-            <div class="about-content">
-                <p>I engineer solutions that blend creative development with operational excellence. My passion is building complex cloud APIs to full scale automation solutions.</p>
+        <!-- Summary Section -->
+        <section id="summary" class="glass-card animate-scroll">
+            <h2 class="section-title">About Me</h2>
+            <div class="summary-content">
+                <p>Results-driven Python Developer with 3+ experience in building scalable backend systems and automation workflows. Adept at developing and deploying scalable applications, managing cloud-native solutions, and optimizing infrastructure. Proven expertise in Django, APIs, Google Cloud, and Azure, with a strong focus on performance, reliability, and automation.</p>
+                <br>
             </div>
         </section>
 
+
+
+        <!-- Experience Section -->
         <section id="experience" class="glass-card animate-scroll">
             <h2 class="section-title">Professional Journey</h2>
-            <div class="timeline">
+            <!-- Added animate-scroll to timeline div -->
+            <div class="timeline animate-scroll">
                  <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <img src="assets/img/company-logo-1.png" alt="TCS Logo" class="company-logo">
-                        <h3 class="timeline-title">Cloud Automation Engineer <span class="company">@ TCS</span></h3>
+                        <img src="assets/img/tcs-logo.png" alt="TCS Logo" class="company-logo">
+                        <h3 class="timeline-title">Cloud Automation Engineer & Python Developer <span class="company">@ TATA CONSULTANCY SERVICES</span></h3>
                         <span class="timeline-date">Dec 2021 – Present</span>
-                        <p>Architecting and managing cloud-native solutions, focusing on development with Django, Django Rest Framework implementing robust logging and monitoring systems for high availability and auto-recovery.</p>
+                        <ul>
+                            <li>Developed and maintained multiple automation workflows deployed on Google App Engine, Cloud Foundry, and Microsoft Power Platforms, processing 25 different automated tasks every minute, significantly improving availability and reliability for both the cloud-native apps and infrastructure.</li>
+                            <li>Developed 20 Django Rest Framework APIs that act as webhooks for triggering on-demand tasks.</li>
+                            <li>Developed and deployed a lightweight Flask application that exposes 25 administrative and repetitive tasks that can be performed on the server, on all cloud compute components.</li>
+                            <li>Deployed and managed cloud infrastructure for data platforms: StreamSets host for about 6,000 data pipelines and Confluent Kafka host for about 16 TB of data moving 2 GB per minute in multiple cloud environments, such as Google Cloud and Azure Cloud, spread across 180 compute servers.</li>
+                            <li>Acted as the administrator for both StreamSets and Kafka, overseeing system performance, security, and troubleshooting, supporting 40 different tenets in the organization.</li>
+                            <li>Designed and implemented automation solutions for reducing the manual efforts spent on non-technical tasks, using Power Automate and custom email processors built with Django on Outlook.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects" class="animate-scroll">
             <h2 class="section-title standalone">Featured Projects</h2>
             <div class="project-gallery">
                  <div class="project-card glass-card">
                     <h3>ExchangeX</h3>
-                    <p>A Currency Exchange Application built with Django and Django Rest Framework hosted on Google's Cloud Run</p>
-                    <a href="#" class="project-link">[Hidden] <i class="ri-arrow-right-up-line"></i></a>
+                    <p>A currency exchange app built with Django and deployed on Google Cloud Run, where users can place orders to exchange their local currency for USD, built with a strong focus on mobile usage, and optimized for lower hosting charges.</p>
+                    <a href="#" class="project-link">[Hidden Link] <i class="ri-arrow-right-up-line"></i></a> <!-- Link is hidden on resume -->
                 </div>
                 <div class="project-card glass-card">
                     <h3>Cloud Server Support API</h3>
-                    <p>A suite of APIs built with flask to expose support critical operations on cloud servers.</p>
-                    <a href="#" class="project-link">View Project <i class="ri-arrow-right-up-line"></i></a>
+                    <p>A Flask-based API that exposes tasks that can be performed on a server or can retrieve information and metrics for the server, highly useful when managing 100s for servers.</p>
+                    <a href="https://github.com/Varunpvs/cloud-server-support-api" target="_blank" class="project-link">View Project <i class="ri-arrow-right-up-line"></i></a>
+                </div>
+                <div class="project-card glass-card">
+                    <h3>Personal Portfolio</h3>
+                    <p>A simple web application showcasing my work experience, hosted on GitHub Pages and a personal domain.</p>
+                    <a href="https://github.com/Varunpvs/portfolio" target="_blank" class="project-link">View Project <i class="ri-arrow-right-up-line"></i></a>
+                </div>
+            </div>
+            <!-- Profiles and Languages/Interests are now part of the Projects section -->
+            <div class="profiles-content animate-scroll">
+                <h2 class="section-title standalone" style="margin-top: 3rem;">Connect & More</h2> <!-- Reduced margin-top -->
+                <div class="profile-links">
+                    <a href="https://www.linkedin.com/in/varun-pvs-00750a194/" target="_blank" class="btn secondary"><i class="ri-linkedin-box-fill"></i> LinkedIn</a>
+                    <a href="https://github.com/Varunpvs" target="_blank" class="btn secondary"><i class="ri-github-fill"></i> GitHub</a>
+                    <a href="https://www.varunweb.dev" target="_blank" class="btn secondary"><i class="ri-global-line"></i> Personal Website</a>
+                </div>
+                <div class="flex-container">
+                    <div class="language-content">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>Telugu: First Language</li>
+                            <li>English: Upper Intermediate (B2)</li>
+                        </ul>
+                    </div>
+                    <div class="interests-content">
+                        <h3>Interests</h3>
+                        <ul>
+                            <li>Full stack development</li>
+                            <li>Gaming Enthusiast - FromSoftware</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+                <!-- Skills Section -->
+        <section id="skills" class="glass-card animate-scroll">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">PowerShell</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Frameworks</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Django REST Framework</span>
+                        <span class="skill-tag">Flask</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud Platforms</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Google Cloud Platform (GCP)</span>
+                        <span class="skill-tag">Microsoft Azure</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud Solutions</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Google App Engine</span>
+                        <span class="skill-tag">Google Cloud Functions</span>
+                        <span class="skill-tag">Google Cloud Run</span>
+                        <span class="skill-tag">Cloud Scheduler</span>
+                        <span class="skill-tag">Compute Engine</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Virtual Machines</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Cloud SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Version Control & Collaboration</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Operating Systems</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Linux Administration</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Core Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Cloud Infrastructure Management</span>
+                        <span class="skill-tag">Automation Workflow Development</span>
+                        <span class="skill-tag">API Development</span>
+                        <span class="skill-tag">Power Automate</span>
+                        <span class="skill-tag">DevOps</span>
+                        <span class="skill-tag">Linux Administration & Troubleshooting</span>
+                        <span class="skill-tag">Scripting</span>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Form -->
         <section id="contact" class="glass-card animate-scroll">
             <h2 class="section-title">Get In Touch</h2>
             <p class="contact-intro">Have a project idea or a question? I am always open to discussing new opportunities and creative collaborations.</p>
